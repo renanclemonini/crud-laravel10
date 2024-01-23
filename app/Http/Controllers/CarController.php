@@ -57,6 +57,15 @@ class CarController extends Controller
         return view('cars.car_show', ['car' => $car]);
     }
 
+    public function listCars()
+    {
+        return Car::all();
+    }
+
+    public function getCar(Car $car){
+        return Car::find($car->id);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
